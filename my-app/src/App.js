@@ -42,8 +42,12 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
+
           <ul>
-          <CoreConcept
+            {CORE_CONCEPTS.map((coreConcept) => <CoreConcept {...coreConcept}></CoreConcept>)}
+          
+
+          {/* <CoreConcept
             image={CORE_CONCEPTS[0].image}
             title={CORE_CONCEPTS[0].title}
             description={CORE_CONCEPTS[0].description}>
@@ -56,7 +60,7 @@ function App() {
           <CoreConcept{...CORE_CONCEPTS[2]}>
           </CoreConcept>
           <CoreConcept{...CORE_CONCEPTS[3]}>
-          </CoreConcept>
+          </CoreConcept> */}
           </ul>
 
         </section>
