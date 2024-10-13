@@ -2,6 +2,7 @@ import { useState } from 'react';
 import TabButton from '../Button/TabButton'
 import {EXAMPLES} from '../../data'
 import Section from '../Section/Section';
+import Tabs from '../Button/Tabs';
 
 
 
@@ -27,13 +28,26 @@ export default function Example(){
     }
     return ( 
         <Section title="Example" id="examples">
+          <Tabs
+          buttonsContains="menu"
+          //buttonsContains={Section}
+
+          button={
+            <>
+          <TabButton isSelected={selectedTopic ==='components'} onSelect={() => handlerClick('components')}>component</TabButton>
+          <TabButton isSelected={selectedTopic ==='jsx'}  onSelect={() => handlerClick('jsx')}>JSX</TabButton>
+          <TabButton isSelected={selectedTopic ==='props'}  onSelect={() => handlerClick('props')}>Props</TabButton>
+          <TabButton isSelected={selectedTopic ==='state'}  onSelect={() => handlerClick('state')}>State</TabButton>
+          </>}>
+          {topicDisplay}
+          </Tabs>
       
-        <menu>
+        {/* <menu>
           <TabButton isSelected={selectedTopic ==='components'} onSelect={() => handlerClick('components')}>component</TabButton>
           <TabButton isSelected={selectedTopic ==='jsx'}  onSelect={() => handlerClick('jsx')}>JSX</TabButton>
           <TabButton isSelected={selectedTopic ==='props'}  onSelect={() => handlerClick('props')}>Props</TabButton>
           <TabButton isSelected={selectedTopic ==='state'}  onSelect={() => handlerClick('state')}>State</TabButton>
         </menu>
-        {topicDisplay}
+        {topicDisplay} */}
         </Section>)
 }
